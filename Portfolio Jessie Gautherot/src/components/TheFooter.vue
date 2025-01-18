@@ -5,12 +5,9 @@
 <template>
   <footer>
     <div class="logo">
-      <img src="../assets/facebook(1).png" alt="logo facebook">
-      <a href="https://www.facebook.com/jessie.gautherot/" target="_blank" rel="noopener noreferrer"></a>
-      <img src="../assets/github.png" alt="logo github">
-      <a href="https://github.com/Jessie-Gautherot" target="_blank" rel="noopener noreferrer"></a>
-      <img src="../assets/instagram(1).png" alt="logo instagram">
-      <a href="https://www.instagram.com/epicalys" target="_blank" rel="noopener noreferrer"></a>
+      <a href="https://www.facebook.com/jessie.gautherot/"target="_blank" rel="noopener noreferrer"><img src="../assets/facebook(1).png" alt="logo facebook"></a>
+      <a href="https://github.com/Jessie-Gautherot" target="_blank" rel="noopener noreferrer"><img src="../assets/github.png" alt="logo github"></a>
+      <a href="https://www.instagram.com/epicalys" target="_blank" rel="noopener noreferrer"><img src="../assets/instagram(1).png" alt="logo instagram"></a>
     </div>
     <div>
       <small>
