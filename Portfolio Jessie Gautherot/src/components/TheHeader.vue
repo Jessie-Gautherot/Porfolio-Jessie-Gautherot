@@ -24,13 +24,16 @@ header {
   align-items: center;
   position: fixed;
   top: 0;
+  right: 0;
+  left: 0;
   width: 100%;
   background-color: rgb(44, 44, 38);
-  box-sizing: border-box;
-  margin: 0%;
+ /* margin: 0%;
   padding: 0%;
-  border: 0%;
+  border: 0%;*/
+ 
 }
+
 
 img {
   width: 130px;

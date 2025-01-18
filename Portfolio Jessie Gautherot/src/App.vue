@@ -19,4 +19,12 @@ import TheFooter from './components/TheFooter.vue';
 
 <style scoped>
 
+template {
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  margin: auto;
+  height: 100%;
+}
+
 </style>
