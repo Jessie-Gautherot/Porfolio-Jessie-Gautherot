@@ -1,4 +1,5 @@
 <script setup>
+  import ContactForm from '@/components/ContactForm.vue';
 
 
 </script>
@@ -30,7 +31,9 @@
     </section>
     <section id="contact">
       <h1>Contactez-moi</h1>
-        <form>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed quibusdam saepe accusantium delectus excepturi, et ullam quod, cupiditate, odio ut sit at nemo assumenda exercitationem nesciunt earum tempore fugit fuga?</form>
+        <ContactForm></ContactForm>
+        
+        
     </section>
   </main>
 </template>
@@ -42,19 +45,31 @@ main {
   background-color:#F3D9B0;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
   right: O;
   left: 0;
   width: 100%;
 }
 
+* {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
 img {
   width: 200px;
-  height: 200px;
-  object-fit: cover;
+  height: auto;
+  /*object-fit: cover;
   border-radius: 50%;
+  box-sizing: border-box;*/
   border : 2px solid black;
   box-shadow: 0px 0px 10px black;
-  box-sizing: border-box;
+  
 
 
 }
