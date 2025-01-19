@@ -1,5 +1,5 @@
 <script setup>
-  import ContactForm from '@/components/ContactForm.vue';
+  
 
 
 </script>
@@ -16,22 +16,19 @@
         <div>
           <h2>Mon CV en HTML et CSS</h2>
           <img src="../assets/image cv 2.png" alt="picture of my Curriculum Vitae">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat asperiores necessitatibus vitae beatae optio fuga sunt aperiam officiis facilis, tempora in ex quibusdam vel, nihil voluptas autem, corrupti incidunt nostrum.</p>
         </div>
         <div>
           <h2>Mon cahier des charges</h2>
           <img src="../assets/picture-cahier-des-charges.png" alt="picture of specifications for a site">
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae, deleniti dolores asperiores ea delectus tempore perspiciatis. Dolorum dolores delectus explicabo ad tenetur unde aliquid magnam, saepe ullam perspiciatis doloremque esse?</p>
         </div>
         <div>
           <h2>Dynamisme d'un espace commentaire en Javascript</h2>
           <img src="../assets/picture-javascript.png" alt="picture javascript project">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa magni voluptatum laborum. Eum iusto reprehenderit, eos, fugit consequatur ipsa dignissimos praesentium nisi cumque maiores molestias, numquam vero accusamus odio impedit.</p>
         </div>
     </section>
     <section id="contact">
       <h1>Contactez-moi</h1>
-        <ContactForm></ContactForm>
+        
         
         
     </section>
@@ -39,6 +36,14 @@
 </template>
 
 <style scoped>
+
+h1 {
+  font-size: xx-large;
+  color: #156062;
+}
+
+h2 {
+  font-size:large }
 
 main {
   padding-top: 140px;
@@ -67,11 +72,10 @@ img {
   /*object-fit: cover;
   border-radius: 50%;
   box-sizing: border-box;*/
-  border : 2px solid black;
-  box-shadow: 0px 0px 10px black;
-  
+  border : 2px solid black;}
 
-
+img:hover {
+  box-shadow: 10px 5px 5px black;
 }
 
 

@@ -4,7 +4,7 @@
 
 <template>
   <header>
-    <img src="../assets/photo_de_profil.jpg" alt="my picture">
+    <a href="#about"><img src="../assets/photo_de_profil.jpg" alt="my picture"></a>
     <h1>Portfolio de Jessie Gautherot</h1>
     <nav>
       <ul>
@@ -32,6 +32,10 @@ header {
   padding: 0%;
   border: 0%;*/
  
+}
+
+a:active {
+  text-decoration-line: underline;
 }
 
 
@@ -69,6 +73,7 @@ li {
 
 a {
   text-decoration: none;
+  color: aliceblue;
   font-size: larger;
 }
 

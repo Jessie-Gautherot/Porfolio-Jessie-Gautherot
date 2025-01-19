@@ -5,12 +5,16 @@
 <template>
  <section>
     <img src="../assets/not found 2.jpg" alt="error 404">
-    <h1>ca va etre l'erreur 404</h1>
+    <h1>Désolé, cette page n'existe pas</h1>
+        <p>Revenir sur la page d'acceuil</p>
+        <button>Page d'acceuil</button>
 </section>
   
 </template>
 
 <style scoped>
+
+
 
 section {
     display: flex;
