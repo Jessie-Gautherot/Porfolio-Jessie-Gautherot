@@ -4,7 +4,7 @@
 
 <template>
   <header>
-    <a href="#about"><img src="../assets/photo_de_profil.jpg" alt="my picture"></a>
+    <a href="#about" ><img src="../assets/my-logo.ico" alt="my logo"></a>
     <h1>Portfolio de Jessie Gautherot</h1>
     <nav>
       <ul>
@@ -44,7 +44,7 @@ img {
   height: 130px;
   object-fit: cover;
   border-radius: 50%;
-  border : 2px solid black;
+  border : 2px solid #153962;
   box-shadow: 0px 0px 10px black;
   box-sizing: border-box;
   margin : 10px
