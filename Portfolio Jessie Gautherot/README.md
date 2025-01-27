@@ -17,31 +17,32 @@ It shows the technologies I used for my creations.
 
 ## Installation
 
-## Prerequisites:
+### Prerequisites:
 - **Node.js**: Version 14 or higher
 - **npm**: Node Package Manager (included with Node.js)
 
-## Steps:
-  1. Clone the repository :
+### Steps:
+
+1. Clone the repository :
   ```bash
   git clone https://github.com/Jessie-Gautherot/Portfolio-Jessie-Gautherot
 
-  2.Navigate to the project directory: 
-  ```bash
-   cd portfolio-Jessie-Gautherot
+2. Navigate to the project directory:
+   ```bash
+  cd portfolio-Jessie-Gautherot
 
-3.Install dependencies: 
+3. Install dependencies: 
   ```bash
   npm install 
 
-4.Start the development server: 
+4. Start the development server: 
   ```bash
   npm run dev 
 
-License
+## License
 This project is under the MIT License, allowing you to use, modify, and distribute the code freely.
 
-Contact
+## Contact
 Email: jessie.gautherot@wanadoo.com
 
 Contact me for any questions or collaboration opportunities.
