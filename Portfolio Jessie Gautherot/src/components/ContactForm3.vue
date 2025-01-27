@@ -111,11 +111,11 @@ const sendContactForm = () => {
 
 <style scoped>
 .error {
-  border-color: red;
+  border-color: gray;
 }
 
 .error-message {
-  color: red;
+  color: rgb(175, 46, 46);
   font-size: 12px;
 }
 
@@ -124,18 +124,14 @@ form {
   flex-direction: column; 
   gap: 8px;
   width: 300px; 
-  margin: 0 auto; 
-  padding: 20px;
+  margin: auto; 
+  padding: 50px;
+  padding-right: 70px;
   border: 1px solid #ccc;
   border-radius: 8px;
   background-color: #f9f9f9;
 }
 
-
-.form-div{
-  display: flex;
-  flex-direction: column;
-}
 
 label {
   font-size: 1rem;
@@ -153,7 +149,7 @@ input, textarea {
 
 button {
   padding: 0.8rem;
-  background-color: #4CAF50;
+  background-color: #4c5eaf;
   color: white;
   border: none;
   border-radius: 4px;
