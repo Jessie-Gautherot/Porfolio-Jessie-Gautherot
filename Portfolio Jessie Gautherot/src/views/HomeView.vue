@@ -7,10 +7,15 @@ import ContactForm3 from '@/components/ContactForm3.vue';
     <section id="about" class="section">
       <div class="about-text">
         <h1>A propos de moi</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint eveniet atque...</p>
-      </div>
-      <div class="about-picture">
-        <img src="../assets/photo_de_profil.jpg" alt="my picture">
+        <p>Bonjour, je m'appelle Jessie Gautherot et je suis passionnée par le développement web.
+Actuellement, je suis en formation de développeur web et web mobile au CEF. J'ai eu l'opportunité de travailler 
+sur plusieurs projets, qui m'ont permis d'acquérir une solide base dans le développement d'interfaces utilisateur 
+et de développer mes compétences techniques, notamment avec des frameworks modernes comme Vue.js.
+Ce qui me plaît dans le développement web, c'est la possibilité de donner vie à des idées.
+J'aime créer des interfaces intuitives et interactives qui répondent aux besoins des utilisateurs. 
+Cela me permet de combiner ma créativité avec des compétences techniques, pour proposer des solutions efficaces et agréables.
+Mon objectif est de continuer à évoluer, pour contribuer à des projets plus complexes,
+tout en perfectionnant mes compétences techniques et créatives. </p>
       </div>
     </section>
 
@@ -57,32 +62,16 @@ main {
   box-sizing: border-box;
 }
 
-#about {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  
-  
-}
+
 
 .about-text {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
+  align-items: center;
   width: 300px;
 }
 
-.about-picture {
-  display: flex;
-  width: 200px;
-  height: auto;
-  object-fit: cover;
-  border-radius: 50%;
-  box-sizing: border-box;
-  border: 2px solid black;
-  box-shadow: 10px 5px 5px black;
-}
 
 #works {
   display: flex;
@@ -95,7 +84,7 @@ main {
 
 section {
   padding: 20px;
-  min-height: 100vh;
+  
 }
 
 img {

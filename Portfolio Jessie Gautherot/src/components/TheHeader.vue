@@ -23,7 +23,7 @@ onMounted(() => {
 
 <template>
   <header>
-    <a href="#about"><img src="../assets/my-logo.ico" alt="my picture"></a>
+    <a href="#about"><img src="../assets/photo_de_profil.jpg" alt="my picture"></a>
     <h1>Portfolio de Jessie Gautherot</h1>
     <nav>
       <ul>
