@@ -1,5 +1,5 @@
 <template>
-  <main>
+  
     <div>
         <h1>A propos de moi</h1>
         <p>Bonjour, je m'appelle Jessie Gautherot et je suis passionnée par le développement web.
@@ -14,7 +14,7 @@ Cela me permet de combiner ma créativité avec des compétences techniques, pou
 <p>Mon objectif est de continuer à évoluer, pour contribuer à des projets plus complexes,
 tout en perfectionnant mes compétences techniques et créatives.</p>
 </div>
-</main>
+
 
 </template>
 

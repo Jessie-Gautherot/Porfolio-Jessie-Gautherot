@@ -10,7 +10,7 @@ const goHome = () => {
 
 <template>
  <section>
-    <img src="../assets/not found 2.jpg" alt="illustration error 404">
+    <img src="@/assets/not found 2.jpg" alt="illustration error 404">
     <h1>Désolé, cette page n'existe pas</h1>
         <p>Revenir sur la page d'acceuil</p>
         <button @click="goHome">Page d'acceuil</button>
