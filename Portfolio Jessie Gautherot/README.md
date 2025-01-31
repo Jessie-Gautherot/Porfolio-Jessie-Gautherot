@@ -1,35 +1,53 @@
-# Portfolio Jessie Gautherot
+# Jessie Gautherot's Portfolio
 
-This template should help get you started developing with Vue 3 in Vite.
+## Description
+This portfolio presents my skills and projects in web development. 
+It shows the technologies I used for my creations.
 
-## Recommended IDE Setup
+## Technologies Used
+- **Vue.js 3**: A progressive JavaScript framework for building user interfaces.
+- **HTML5**: Structuring web pages.
+- **CSS3**: HTML element styles.
+- **JavaScript**: A programming language for building dynamic web applications.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## Features
+- **About Me Section**: Learn about my learning, skills, and motivations.
+- **Project Showcase**: My projects with detailed descriptions and links to their GitHub repositories.
+- **Contact Form**: Easily contact me.
 
-## Customize configuration
+## Installation
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+### Prerequisites:
+- **Node.js**: Version 14 or higher
+- **npm**: Node Package Manager (included with Node.js)
 
-## Project Setup
+### Steps:
 
-```sh
-npm install
-```
+1. Clone the repository :
+  ```bash
+  git clone https://github.com/Jessie-Gautherot/Portfolio-Jessie-Gautherot
 
-### Compile and Hot-Reload for Development
+2. Navigate to the project directory:
+   ```bash
+  cd portfolio-Jessie-Gautherot
 
-```sh
-npm run dev
-```
+3. Install dependencies: 
+  ```bash
+  npm install 
 
-### Compile and Minify for Production
+4. Start the development server: 
+  ```bash
+  npm run dev 
 
-```sh
-npm run build
-```
+## License
+This project is under the MIT License, allowing you to use, modify, and distribute the code freely.
 
-### Lint with [ESLint](https://eslint.org/)
+## Contact
+Email: jessie.gautherot@wanadoo.com
 
-```sh
-npm run lint
-```
+Contact me for any questions or collaboration opportunities.
+
+
+
+ 
+
