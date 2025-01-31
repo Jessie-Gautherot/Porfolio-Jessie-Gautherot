@@ -60,7 +60,7 @@ header {
   right: 0;
   left: 0;
   width: 100%;
-  background-color: #35434b;
+  background-color: #324955;
 }
 
 img {
@@ -68,15 +68,15 @@ img {
   height: 130px;
   object-fit: cover;
   border-radius: 50%;
-  border: 2px solid #ffdb9e;
-  box-shadow: 0px 0px 10px #ffdb9e;
+  border: 2px solid #423849;
+  box-shadow: 0px 0px 10px black;
   box-sizing: border-box;
   margin: 10px;
 }
 
 h1,
 li {
-  color: #ffdb9e;
+  color: antiquewhite;
 }
 
 nav {
@@ -98,7 +98,7 @@ li {
 
 a {
   text-decoration: none;
-  color:  #ffdb9e;
+  color: aliceblue;
   font-size: larger;
 }
 
