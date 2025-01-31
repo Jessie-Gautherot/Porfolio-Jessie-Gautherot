@@ -26,7 +26,7 @@ import MyWorks from '@/components/MyWorks.vue';
 
 
 main {
-  background-color: #F3D9B0;
+  background-color: #e7c9f3;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -45,7 +45,7 @@ section {
 
 h1 {
   font-size: xx-large;
-  color: #156062;
+  color: #464155;
 }
 
 h2 {

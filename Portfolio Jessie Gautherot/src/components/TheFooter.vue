@@ -20,7 +20,7 @@
 <style scoped>
 
 footer {
-  background-color:  #156062;
+  background-color:  #e47a51;
   display: flex;
   flex-direction: column;
   justify-content: center;

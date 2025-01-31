@@ -60,7 +60,7 @@ header {
   right: 0;
   left: 0;
   width: 100%;
-  background-color: #156062;
+  background-color: #635654;
 }
 
 img {
@@ -68,7 +68,7 @@ img {
   height: 130px;
   object-fit: cover;
   border-radius: 50%;
-  border: 2px solid #153962;
+  border: 2px solid #30243a;
   box-shadow: 0px 0px 10px black;
   box-sizing: border-box;
   margin: 10px;

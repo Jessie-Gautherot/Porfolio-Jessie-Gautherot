@@ -31,7 +31,10 @@ div {
   justify-content: center;
   align-items: center;
   width: 550px;
+  border: 2px solid rgb(236, 222, 222);
+  margin-top: 120px;
 }
+
 
 h1 {
   font-size: xx-large;
