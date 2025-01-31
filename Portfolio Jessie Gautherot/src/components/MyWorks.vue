@@ -1,6 +1,6 @@
 <template>
   <div class="works-list">
-    <h1>Mes réalisations</h1>
+    
     
     <!-- Projet 1 (CV) -->
     <div class="work-item" @click="openModal('cv')">
@@ -102,9 +102,9 @@ const closeModal = () => {
 
 <style scoped>
 
-h1 {
-  font-size: xx-large;
-  color: #156062;
+
+h2 {
+  color: #35434b;
 }
 
 .works-list {
@@ -119,7 +119,7 @@ h1 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-bottom: 50px;
+  padding-bottom: 20px;
   cursor: pointer;
 }
 
@@ -130,7 +130,7 @@ h1 {
 }
 
 .img:hover {
-  box-shadow: 10px 5px 5px black;
+  box-shadow: 10px 5px 5px #35434b;
 }
 
 .modal-overlay {
@@ -147,7 +147,7 @@ h1 {
 }
 
 .modal {
-  background-color: white;
+  background-color: #ffdb9e;
   padding: 20px;
   border-radius: 8px;
   max-width: 600px;
@@ -165,7 +165,7 @@ h1 {
   font-size: 24px;
   background: none;
   border: none;
-  color: #156062;
+  color: #35434b;
   cursor: pointer;
 }
 
@@ -176,7 +176,7 @@ h1 {
 }
 
 a {
-  color: #156062;
+  color: #35434b;
   text-decoration: none;
 }
 

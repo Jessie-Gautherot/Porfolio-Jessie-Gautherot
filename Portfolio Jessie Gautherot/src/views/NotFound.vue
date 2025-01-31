@@ -12,8 +12,8 @@ const goHome = () => {
  <section>
     <img src="@/assets/not found 2.jpg" alt="illustration error 404">
     <h1>Désolé, cette page n'existe pas</h1>
-        <p>Revenir sur la page d'acceuil</p>
-        <button @click="goHome">Page d'acceuil</button>
+        <p>Revenez sur la page d'accueil !</p>
+        <button @click="goHome">Page d'accueil</button>
 </section>
   
 </template>
@@ -29,7 +29,7 @@ section {
     align-items: center;
     padding-bottom: 50px;
     box-sizing: border-box;
-    
+    background-color: #ffdb9e;
 }
 
 
@@ -44,6 +44,18 @@ img {
     align-items: center;
 }
 
+button { 
+  padding: 0.8rem;
+  background-color: #35434b;
+  color: #ffdb9e;
+  border: 1px solid #001c2f;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer
+}
 
+button:hover {
+  background-color: #e47a51; 
+}
 
 </style>

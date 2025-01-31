@@ -32,11 +32,13 @@ footer {
   padding: 0%;
   border: 0%;*/
   margin: auto;
+  padding-top: 20px;
 }
 
 template {
   margin: auto;
 }
+
 
 .logo {
   display: flex;
@@ -49,5 +51,7 @@ img {
   padding: 10px;
   margin-bottom: 20px;
 }
+
+
 
 </style>

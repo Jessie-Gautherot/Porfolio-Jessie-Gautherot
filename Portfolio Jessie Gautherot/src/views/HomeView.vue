@@ -7,11 +7,13 @@ import MyWorks from '@/components/MyWorks.vue';
 <template>
   <main>
     <section id="about" class="section">
-    <AboutMe></AboutMe>
-  </section>
+      <h1>A propos de moi</h1>
+        <AboutMe></AboutMe>
+   </section>
 
     <section id="works" class="section">
-    <MyWorks></MyWorks>
+      <h1>Mes réalisations</h1>
+        <MyWorks></MyWorks>
     </section>
 
     <section id="contact" class="section">
@@ -26,7 +28,7 @@ import MyWorks from '@/components/MyWorks.vue';
 
 
 main {
-  background-color: #e7c9f3;
+  background-color:#ffdb9e;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -45,7 +47,9 @@ section {
 
 h1 {
   font-size: xx-large;
-  color: #464155;
+  color: #001c2f;
+  text-decoration: underline #001c2f ;
+  text-underline-offset: 9px;
 }
 
 h2 {

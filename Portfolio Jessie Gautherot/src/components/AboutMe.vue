@@ -1,9 +1,8 @@
 <template>
   
     <div>
-        <h1>A propos de moi</h1>
         <p>Bonjour, je m'appelle Jessie Gautherot et je suis passionnée par le développement web.
-Actuellement, je suis en formation de développeur web et web mobile au CEF. J'ai eu l'opportunité de travailler 
+Je suis actuellement en formation de développeuse web et web mobile au CEF. J'ai eu l'opportunité de travailler 
 sur plusieurs projets, qui m'ont permis d'acquérir une solide base dans le développement d'interfaces utilisateur 
 et de développer mes compétences techniques, notamment avec des frameworks modernes comme Vue.js.</p>
 <br>
@@ -31,14 +30,15 @@ div {
   justify-content: center;
   align-items: center;
   width: 550px;
-  border: 2px solid rgb(236, 222, 222);
-  margin-top: 120px;
+  border: 1px solid #e47a51;
+  border-radius: 4px;
+  margin-top: 20px ;
+  padding: 20px 20px;
+  letter-spacing: 1px;
+  font-size: larger;
 }
 
 
-h1 {
-  font-size: xx-large;
-  color: #156062;
-}
+
 
 </style>

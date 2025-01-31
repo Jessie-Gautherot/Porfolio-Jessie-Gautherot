@@ -127,7 +127,7 @@ form {
   margin: auto; 
   padding: 50px;
   padding-right: 70px;
-  border: 1px solid #ccc;
+  border: 1px solid #e47a51;
   border-radius: 8px;
   background-color: #f9f9f9;
 }
@@ -136,12 +136,12 @@ form {
 label {
   font-size: 1rem;
   margin-bottom: 0.5rem;
-  color: #333;
+  color: #35434b;
 }
 
 input, textarea {
   padding: 0.8rem;
-  border: 1px solid #ccc;
+  border: 1px solid #b9b8b8;
   border-radius: 4px;
   font-size: 1rem;
   width: 100%;
@@ -149,8 +149,8 @@ input, textarea {
 
 button {
   padding: 0.8rem;
-  background-color: #4c5eaf;
-  color: white;
+  background-color: #35434b;
+  color: #ffdb9e;
   border: none;
   border-radius: 4px;
   font-size: 1rem;
@@ -158,6 +158,6 @@ button {
 }
 
 button:hover {
-  background-color: #45a049; 
+  background-color: #e47a51; 
 }
 </style>
