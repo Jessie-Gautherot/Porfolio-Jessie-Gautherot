@@ -35,7 +35,8 @@ div {
   margin-top: 20px ;
   padding: 20px 20px;
   letter-spacing: 1px;
-  font-size: larger;
+  font-size: 1.3rem;
+  text-indent: 1rem;
 }
 
 

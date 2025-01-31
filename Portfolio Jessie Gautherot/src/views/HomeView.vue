@@ -46,14 +46,14 @@ section {
 
 
 h1 {
-  font-size: xx-large;
+  font-size: 2rem;
   color: #001c2f;
   text-decoration: underline #001c2f ;
   text-underline-offset: 9px;
 }
 
 h2 {
-  font-size: large;
+  font-size: 1.5rem;
   align-items: center;
 }
 </style>

@@ -105,6 +105,7 @@ const closeModal = () => {
 
 h2 {
   color: #35434b;
+  font-size: 1.3rem;
 }
 
 .works-list {

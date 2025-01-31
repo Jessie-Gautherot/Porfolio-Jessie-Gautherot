@@ -74,9 +74,10 @@ img {
   margin: 10px;
 }
 
-h1,
-li {
-  color: antiquewhite;
+h1 {
+  color: #ffdb9e;
+  font-size: 2.5rem;
+
 }
 
 nav {
@@ -98,8 +99,8 @@ li {
 
 a {
   text-decoration: none;
-  color: aliceblue;
-  font-size: larger;
+  color: #ffdb9e;
+  font-size: 1.5rem;
 }
 
 a.active {
