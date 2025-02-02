@@ -1,49 +1,34 @@
+<template>
+  <section id="about" class="section">
+    <h1>A propos de moi</h1>
+      <AboutMe></AboutMe>
+  </section>
+  <section id="works" class="section">
+    <h1>Mes réalisations</h1>
+      <MyWorks></MyWorks>
+  </section>
+  <section id="contact" class="section">
+    <h1>Contactez-moi</h1>
+      <ContactForm3></ContactForm3>
+  </section>
+</template>
+
 <script setup>
 import ContactForm3 from '@/components/ContactForm3.vue';
 import AboutMe from '@/components/AboutMe.vue';
 import MyWorks from '@/components/MyWorks.vue';
 </script>
 
-<template>
-  <main>
-    <section id="about" class="section">
-      <h1>A propos de moi</h1>
-        <AboutMe></AboutMe>
-   </section>
-
-    <section id="works" class="section">
-      <h1>Mes réalisations</h1>
-        <MyWorks></MyWorks>
-    </section>
-
-    <section id="contact" class="section">
-      <h1>Contactez-moi</h1>
-      <ContactForm3></ContactForm3>
-    </section>
-  </main>
-</template>
-
 <style scoped>
-
-
-
-main {
+section {
   background-color:#ffdb9e;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-section {
   padding-top: 140px;
-  padding-bottom: 40px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  padding-bottom: 30px;
 }
-
 
 h1 {
   font-size: 2rem;

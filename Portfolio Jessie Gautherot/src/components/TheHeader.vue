@@ -1,3 +1,23 @@
+<template>
+  <section>
+    <a href="#about"><img src="@/assets/photo_de_profil.jpg" alt="my picture"></a>
+    <h1>Portfolio de Jessie Gautherot</h1>
+    <nav>
+      <ul>
+        <li>
+          <a href="#about":class="{ active: activeLink === 'about' }">A propos</a>
+        </li>
+        <li>
+          <a href="#works":class="{ active: activeLink === 'works' }">Réalisations</a>
+        </li>
+        <li>
+          <a href="#contact":class="{ active: activeLink === 'contact' }">Contact</a>
+        </li>
+      </ul>
+    </nav>
+  </section>
+</template>
+
 <script setup>
 import { ref, onMounted } from 'vue';
 
@@ -17,41 +37,11 @@ const updateActiveLink = () => {
 onMounted(() => {
   updateActiveLink();
   window.addEventListener('hashchange', updateActiveLink);
-
 });
 </script>
 
-<template>
-  <header>
-    <a href="#about"><img src="@/assets/photo_de_profil.jpg" alt="my picture"></a>
-    <h1>Portfolio de Jessie Gautherot</h1>
-    <nav>
-      <ul>
-        <li>
-          <a 
-            href="#about" 
-            :class="{ active: activeLink === 'about' }"
-          >A propos</a>
-        </li>
-        <li>
-          <a 
-            href="#works" 
-            :class="{ active: activeLink === 'works' }"
-          >Réalisations</a>
-        </li>
-        <li>
-          <a 
-            href="#contact" 
-            :class="{ active: activeLink === 'contact' }"
-          >Contact</a>
-        </li>
-      </ul>
-    </nav>
-  </header>
-</template>
-
 <style scoped>
-header {
+section { 
   display: flex;
   justify-content: space-between;
   align-items: center;

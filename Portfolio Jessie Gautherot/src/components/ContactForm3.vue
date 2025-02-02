@@ -1,33 +1,25 @@
 <template>
   <form @submit.prevent="handleSubmit">
-    <div class="form-div">
+    <div>
       <label for="firstname">Prénom</label>
-      <input type="text" id="firstname" v-model="form.firstname" class="{'error': errors.firstname}">
+      <input type="text" id="firstname" v-model="form.firstname":class="{'error': errors.firstname}">
       <div v-if="errors.firstname" class="error-message">{{ errors.firstname }}</div>
     </div>
-    
-    <div class="form-div">
+    <div>
       <label for="lastname">Nom</label>
-      <input 
-        type="text" 
-        id="lastname" 
-        v-model="form.lastname" 
-        :class="{'error': errors.lastname}"@input="clearError('firstname')"/>
+      <input type="text" id="lastname" v-model="form.lastname":class="{'error': errors.lastname}">
       <div v-if="errors.lastname" class="error-message">{{ errors.lastname }}</div>
     </div>
-    
-    <div class="form-div">
+    <div>
       <label for="object">Objet</label>
-      <input type="text" id="object" v-model="form.object" :class="{'error': errors.object}" />
+      <input type="text" id="object" v-model="form.object" :class="{'error': errors.object}">
       <div v-if="errors.object" class="error-message">{{ errors.object }}</div>
     </div>
-    
-    <div class="form-div">
+    <div>
       <label for="message">Message</label>
       <textarea id="message" v-model="form.message":class="{'error': errors.message}"></textarea>
       <div v-if="errors.message" class="error-message">{{ errors.message }}</div>
     </div>
-    
     <div>
       <button type="submit">Envoyer</button>
     </div>
@@ -103,9 +95,7 @@ const sendContactForm = () => {
   form.value.firstname = '';
   form.value.lastname = '';
   form.value.object = '';
-  form.value.message = '';
-
-  
+  form.value.message = ''; 
 };
 </script>
 
@@ -132,7 +122,6 @@ form {
   background-color: #f9f9f9;
 }
 
-
 label {
   font-size: 1rem;
   margin-bottom: 0.5rem;
@@ -148,10 +137,10 @@ input, textarea {
 }
 
 button {
-  padding: 0.8rem;
+  padding: 1rem;
   background-color: #35434b;
   color: #ffdb9e;
-  border: none;
+  border: 1px black;
   border-radius: 4px;
   font-size: 1rem;
   cursor: pointer;

@@ -1,7 +1,5 @@
 <template>
   <div class="works-list">
-    
-    
     <!-- Projet 1 (CV) -->
     <div class="work-item" @click="openModal('cv')">
       <h2>Mon CV en HTML et CSS</h2>
@@ -9,42 +7,37 @@
         <img src="@/assets/image cv 2.png" alt="Mon CV réalisé en HTML et CSS" class="img">
       </figure>
     </div>
-
-    <!-- Projet 2 (Cahier des Charges) -->
+    <!-- Projet 2 (Cahier des charges) -->
     <div class="work-item" @click="openModal('cahier')">
       <h2>Mon cahier des charges</h2>
       <figure>
         <img src="@/assets/picture-cahier-des-charges.png" alt="Cahier des charges pour un projet web" class="img">
       </figure>
     </div>
-
-    <!-- Projet 3 (Espace Commentaire) -->
+    <!-- Projet 3 (Espace commentaire) -->
     <div class="work-item" @click="openModal('commentaire')">
       <h2>Dynamisme d'un espace commentaire en Javascript</h2>
       <figure>
         <img src="@/assets/picture-javascript.png" alt="Espace commentaire dynamique en Javascript" class="img">
       </figure>
     </div>
-
-    <!-- La modale -->
+  
+    <!--modale -->
     <div v-if="isModalOpen" class="modal-overlay" @click.self="closeModal">
       <div class="modal">
         <button class="close-modal" @click="closeModal">X</button>
         <h2>{{ modalTitle }}</h2>
         <p><strong>Date de création :</strong> {{ modalDate }}</p>
         <p><strong>Technologies utilisées :</strong> {{ modalTechnologies }}</p>
-
-    <!--div à afficher, seulement si une valeur est assignée-->
+      <!--div à afficher, seulement si une valeur est assignée-->
         <div v-if="modalLink">
           <p><a :href="modalLink" target="_blank">Visiter le projet</a></p>
         </div>
-
         <div v-if="modalGithub">
           <p><a :href="modalGithub" target="_blank">Voir le repository GitHub</a></p>
         </div>
-        
         <div v-if="modalImage">
-          <img :src="modalImage" alt="Image du projet" class="modal-img">
+         <img :src="modalImage" alt="Image du projet" class="modal-img">
         </div>
       </div>
     </div>
@@ -101,8 +94,6 @@ const closeModal = () => {
 </script>
 
 <style scoped>
-
-
 h2 {
   color: #35434b;
   font-size: 1.3rem;
@@ -168,8 +159,7 @@ h2 {
   border: none;
   color: #35434b;
   cursor: pointer;
-}
-
+} 
 
 .modal-img {
   max-width: 100%;
