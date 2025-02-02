@@ -1,6 +1,7 @@
 <template>
   <div class="works-list">
     <!-- Projet 1 (CV) -->
+    <!-- Au clic, la fonction openModal est appelée avec l'argument CV-->
     <div class="work-item" @click="openModal('cv')">
       <h2>Mon CV en HTML et CSS</h2>
       <figure>
@@ -21,15 +22,18 @@
         <img src="@/assets/picture-javascript.png" alt="Espace commentaire dynamique en Javascript" class="img">
       </figure>
     </div>
-  
-    <!--modale -->
-    <div v-if="isModalOpen" class="modal-overlay" @click.self="closeModal">
-      <div class="modal">
-        <button class="close-modal" @click="closeModal">X</button>
+
+    <!-- Modal -->
+    <ModalComponent :isOpen="isModalOpen" @modal-close="closeModal">
+      <!--Affiche le titre dynamique du projet ouvert-->
+      <template #header>
         <h2>{{ modalTitle }}</h2>
+      </template>
+      <!--Affiche le contenu dynamique du projet ouvert-->
+      <template #content>
         <p><strong>Date de création :</strong> {{ modalDate }}</p>
         <p><strong>Technologies utilisées :</strong> {{ modalTechnologies }}</p>
-      <!--div à afficher, seulement si une valeur est assignée-->
+        <!--div de contenu à afficher, seulement si une valeur est assignée-->
         <div v-if="modalLink">
           <p><a :href="modalLink" target="_blank">Visiter le projet</a></p>
         </div>
@@ -37,30 +41,33 @@
           <p><a :href="modalGithub" target="_blank">Voir le repository GitHub</a></p>
         </div>
         <div v-if="modalImage">
-         <img :src="modalImage" alt="Image du projet" class="modal-img">
+          <img :src="modalImage" alt="Image du projet" class="modal-img">
         </div>
-      </div>
-    </div>
+      </template>
+      <template #footer>
+        <button @click.stop="closeModal">Fermer</button>
+      </template>
+    </ModalComponent>
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue';
+import ModalComponent from './ModalComponent.vue';
 
-// Données de la modale
+//Constantes de la modale
 const isModalOpen = ref(false);
 const modalTitle = ref('');
 const modalDate = ref('');
 const modalTechnologies = ref('');
 const modalLink = ref('');
 const modalGithub = ref('');
-const modalImage = ref(''); 
+const modalImage = ref('');
 
-// Fonction pour ouvrir la modale avec les informations dynamiques
+// Ouvrir la modale avec les informations dynamiques
 const openModal = (project) => {
   isModalOpen.value = true;
-
-// Définir les informations qui apparaissent en fonction du projet
+//Informations en fonction du projet ouvert
   if (project === 'cv') {
     modalTitle.value = 'Mon CV en HTML et CSS';
     modalDate.value = 'Septembre 2024';
@@ -74,8 +81,8 @@ const openModal = (project) => {
     modalDate.value = 'Novembre 2024';
     modalTechnologies.value = 'OpenOffice, PDF';
     modalLink.value = '/cahier-des-charges.pdf'; 
-    modalGithub.value=''; // pas de repository pour ce projet
-    modalImage.value = ''; // Pas d'image pour ce projet
+    modalGithub.value = '';
+    modalImage.value = ''; 
 
   } else if (project === 'commentaire') {
     modalTitle.value = 'Dynamisme d\'un espace commentaire en Javascript';
@@ -125,45 +132,10 @@ h2 {
   box-shadow: 10px 5px 5px #35434b;
 }
 
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-
-.modal {
-  background-color: #ffdb9e;
-  padding: 20px;
-  border-radius: 8px;
-  max-width: 600px;
-  width: 80%;
-  text-align: center;
-  position: relative;
-  max-height: 80vh;
-  overflow-y: auto;
-}
-
-.close-modal {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 24px;
-  background: none;
-  border: none;
-  color: #35434b;
-  cursor: pointer;
-} 
-
 .modal-img {
-  max-width: 100%;
-  max-height: 300px;
+  max-width: 70%;
+  max-height: 40vh;
+  
 }
 
 a {
@@ -174,6 +146,14 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+button {
+  padding: 0.8rem;
+  background-color: #35434b;
+  color: #ffdb9e;
+  border: 1px black;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+}
 </style>
-
-
