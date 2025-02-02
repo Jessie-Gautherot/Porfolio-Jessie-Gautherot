@@ -3,16 +3,15 @@
     <img src="@/assets/not found 2.jpg" alt="illustration error 404">
     <h1>Désolée, cette page n'existe pas</h1>
     <p> Revenez sur la page d'accueil, en cliquant sur le bouton !</p>
+    <!--Au clic, exécution de la fonction "goHome"-->
     <button @click="goHome">Page d'accueil</button>
   </section>
 </template>
 
 <script setup>
 import { useRouter } from 'vue-router';
-
 const router = useRouter();
-
-// Redirection vers la page d'accueil
+// "goHome" redirige vers la page d'accueil, grace au router
 const goHome = () => {
   router.push('/');
 };

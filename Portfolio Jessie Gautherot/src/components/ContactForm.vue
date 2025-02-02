@@ -1,7 +1,9 @@
 <template>
+  <!--Création d'un formulaire et empechement du comportement par defaut, pour ne pas que la page se recharge-->
   <form @submit.prevent="handleSubmit">
     <div>
       <label for="firstname">Prénom</label>
+      <!--utilisation de v-model pour lier les données à une classe dynamique pour l'affichage des erreurs-->
       <input type="text" id="firstname" v-model="form.firstname":class="{'error': errors.firstname}">
       <div v-if="errors.firstname" class="error-message">{{ errors.firstname }}</div>
     </div>
@@ -28,36 +30,33 @@
 
 <script setup>
 import { ref } from 'vue';
-
-// Variables du formulaire
+// Variables réactives pour les champs du formulaire, avec des valeurs vides, par défaut
 const form = ref({
   firstname: '',
   lastname: '',
   object: '',
   message: '',
 });
-
-// Variable pour les erreurs
+// Variable réactives pour stocker les messages d'erreurs, associés à chaque champs du formulaire
 const errors = ref({
   firstname: '',
   lastname: '',
   object: '',
   message: '',
 });
-
 // Fonction de soumission du formulaire
 const handleSubmit = () => {
-  // Réinitialiser les erreurs
+  // Réinitialiser les erreurs avant validation, pour eviter d'afficher les erreurs d'une précédente soumission
   errors.value = {
     firstname: '',
     lastname: '',
     object: '',
     message: '',
   };
-
-  // Validation du formulaire
+  // Variable pour suivre l'état de validation du formulaire
   let isValid = true;
-
+  // Vérifier si tous les champs sont remplis. Si un champs est vide, une erreur est enregistrée
+  // pour ce champ et "isValid" est mit à false
   if (!form.value.firstname) {
     errors.value.firstname = 'Le prénom est requis.';
     isValid = false;
@@ -77,21 +76,20 @@ const handleSubmit = () => {
     errors.value.message = 'Le message est requis.';
     isValid = false;
   }
-
-  // Si le formulaire est valide, simuler l'envoi
+  // Si tous les champs sont rempli, appeler "sendContactForm"
   if (isValid) {
     sendContactForm();
   }
 };
-
-// Fonction qui simule l'envoi de l'email
+// Fonction qui 
+// simule l'envoi de l'email vers une adresse fictive, définie en variable d'environement
+// affiche une fenêtre, montrant que le formulaire à bien été envoyé
+// réinitialise les champs du formulaire après l'envoi simulé
 const sendContactForm = () => {
   const FictifEmail = import.meta.env.VITE_EMAIL_FICTIF;
 
-  // Simuler l'envoi de l'email
   alert(`Votre demande a bien été envoyée à ${FictifEmail}`);
   
-  // Réinitialiser les champs du formulaire après envoi simulé
   form.value.firstname = '';
   form.value.lastname = '';
   form.value.object = '';

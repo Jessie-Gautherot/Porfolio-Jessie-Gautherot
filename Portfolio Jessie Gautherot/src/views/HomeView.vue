@@ -9,12 +9,12 @@
   </section>
   <section id="contact" class="section">
     <h1>Contactez-moi</h1>
-      <ContactForm3></ContactForm3>
+      <ContactForm></ContactForm>
   </section>
 </template>
 
 <script setup>
-import ContactForm3 from '@/components/ContactForm3.vue';
+import ContactForm from '@/components/ContactForm.vue';
 import AboutMe from '@/components/AboutMe.vue';
 import MyWorks from '@/components/MyWorks.vue';
 </script>

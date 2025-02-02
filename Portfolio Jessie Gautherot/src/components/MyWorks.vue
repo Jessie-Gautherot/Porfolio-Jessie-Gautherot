@@ -1,7 +1,7 @@
 <template>
   <div class="works-list">
     <!-- Projet 1 (CV) -->
-    <!-- Au clic, la fonction openModal est appelée avec l'argument CV-->
+    <!-- Au clic, la fonction openModal est appelée avec l'argument CV et affiche les informations de ce projet-->
     <div class="work-item" @click="openModal('cv')">
       <h2>Mon CV en HTML et CSS</h2>
       <figure>
@@ -9,6 +9,7 @@
       </figure>
     </div>
     <!-- Projet 2 (Cahier des charges) -->
+    <!-- Au clic, la fonction openModal est appelée avec l'argument cahier et affiche les informations de ce projet-->
     <div class="work-item" @click="openModal('cahier')">
       <h2>Mon cahier des charges</h2>
       <figure>
@@ -16,14 +17,16 @@
       </figure>
     </div>
     <!-- Projet 3 (Espace commentaire) -->
+    <!-- Au clic, la fonction openModal est appelée avec l'argument commentaire et affiche les informations de ce projet -->
     <div class="work-item" @click="openModal('commentaire')">
       <h2>Dynamisme d'un espace commentaire en Javascript</h2>
       <figure>
         <img src="@/assets/picture-javascript.png" alt="Espace commentaire dynamique en Javascript" class="img">
       </figure>
     </div>
-
     <!-- Modal -->
+    <!--Le composant "ModalComponent" est affiché ou non en fonction de la valeur de "isModalOpen"-->
+    <!--Ecoute de l'évenement "modal-close" émit par le composant "ModalComponent" pour fermer la modale-->
     <ModalComponent :isOpen="isModalOpen" @modal-close="closeModal">
       <!--Affiche le titre dynamique du projet ouvert-->
       <template #header>
@@ -33,7 +36,7 @@
       <template #content>
         <p><strong>Date de création :</strong> {{ modalDate }}</p>
         <p><strong>Technologies utilisées :</strong> {{ modalTechnologies }}</p>
-        <!--div de contenu à afficher, seulement si une valeur est assignée-->
+        <!--Affiche le contenu dynamique du projet ouvert, seulement si une valeur est assignée-->
         <div v-if="modalLink">
           <p><a :href="modalLink" target="_blank">Visiter le projet</a></p>
         </div>
@@ -45,7 +48,7 @@
         </div>
       </template>
       <template #footer>
-        <button @click.stop="closeModal">Fermer</button>
+        <!--bouton de fermeture dans le composant "ModalComponent"-->
       </template>
     </ModalComponent>
   </div>
@@ -55,7 +58,7 @@
 import { ref } from 'vue';
 import ModalComponent from './ModalComponent.vue';
 
-//Constantes de la modale
+// Constantes de la modale
 const isModalOpen = ref(false);
 const modalTitle = ref('');
 const modalDate = ref('');
@@ -67,7 +70,8 @@ const modalImage = ref('');
 // Ouvrir la modale avec les informations dynamiques
 const openModal = (project) => {
   isModalOpen.value = true;
-//Informations en fonction du projet ouvert
+
+// Informations en fonction du projet ouvert
   if (project === 'cv') {
     modalTitle.value = 'Mon CV en HTML et CSS';
     modalDate.value = 'Septembre 2024';
@@ -135,7 +139,6 @@ h2 {
 .modal-img {
   max-width: 70%;
   max-height: 40vh;
-  
 }
 
 a {
@@ -145,15 +148,5 @@ a {
 
 a:hover {
   text-decoration: underline;
-}
-
-button {
-  padding: 0.8rem;
-  background-color: #35434b;
-  color: #ffdb9e;
-  border: 1px black;
-  border-radius: 4px;
-  font-size: 1rem;
-  cursor: pointer;
 }
 </style>

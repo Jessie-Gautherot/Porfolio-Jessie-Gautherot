@@ -3,10 +3,10 @@
   <div v-if="props.isOpen" class="modal-mask">
     <!-- Pour centrer à l'écran-->
     <div class="modal-wrapper">
-      <!--Conteneur de la modale-->
+      <!--Conteneur principal de la modale-->
       <div class="modal-container" ref="target">
         <div class="modal-header">
-          <!--header, content and footer depending of the project with slot-->
+          <!--Contenu dynamique du header et du body passés via des slots-->
           <slot name="header">default header</slot>
         </div>
         <div class="modal-body">
@@ -14,8 +14,9 @@
         </div>
         <div class="modal-footer">
           <slot name="footer">
-            <!--Fermeture de la modale au clic-->
-            <button @click.stop="emit('modal-close')">Close</button>
+            <!--Au clic, un évènement "modal-close" est émit pour demander la fermeture de la modale-->
+            <!-- On empêche la propagation de l'évènement-->
+            <button @click.stop="emit('modal-close')">Fermer</button>
           </slot>
         </div>
       </div>
@@ -26,12 +27,11 @@
 <script setup>
 import { defineProps, defineEmits, ref } from 'vue';
 import { onClickOutside } from '@vueuse/core';
-
-// Constante isOpen qui vérifie si la modale est ouverte ou non
+// Attente de la prop isOpen qui détermine si la modale doit être affichée
 const props = defineProps({
   isOpen: Boolean
 });
-// Fermer la modale
+// Déclare l'évènement "modal-close" 
 const emit = defineEmits(['modal-close']);
 // En cas de clic en dehors de la modale, celle-ci se ferme
 const target = ref(null);
@@ -39,7 +39,7 @@ onClickOutside(target, () => emit('modal-close'));
 </script>
 
 <style scoped>
-/*Arrière plan foncé et transparent de la modale*/
+/* Arrière plan foncé et transparent de la modale */
 .modal-mask {
   position: fixed;
   z-index: 9998;
@@ -49,7 +49,7 @@ onClickOutside(target, () => emit('modal-close'));
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
 }
-/* Centrer la modale*/
+/* Centrer la modale */
 .modal-wrapper{
   display: flex;
   justify-content: center;
@@ -62,7 +62,7 @@ onClickOutside(target, () => emit('modal-close'));
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 9999; 
 }
-/* conteneur des éléments*/
+/* conteneur des éléments */
 .modal-container {
   background-color: #ffdb9e;
   border-radius: 8px;
@@ -75,10 +75,19 @@ onClickOutside(target, () => emit('modal-close'));
   position: relative;
   margin: 0 auto; 
 }
-/* Taille des images de la modale*/
+/* Taille des images de la modale */
 .modal-container img {
   max-width: 40%;
   height: auto;
 }
 
+button {
+  padding: 0.8rem;
+  background-color: #35434b;
+  color: #ffdb9e;
+  border: 1px black;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+}
 </style>

@@ -5,6 +5,7 @@
     <nav>
       <ul>
         <li>
+          <!--Attribut la classe "active" si l'utilisateur clique sur un de ces liens-->
           <a href="#about":class="{ active: activeLink === 'about' }">A propos</a>
         </li>
         <li>
@@ -20,10 +21,9 @@
 
 <script setup>
 import { ref, onMounted } from 'vue';
-
+//variable réactive qui contient le lien actif
 const activeLink = ref('');
-
-// Mettre à jour le lien actif selon le hash de l'URL
+// Mettre à jour "activeLink" en fonction du hash
 const updateActiveLink = () => {
   const hash = window.location.hash.substring(1);
   if (hash) {
@@ -32,8 +32,8 @@ const updateActiveLink = () => {
     activeLink.value = 'about'; // Valeur par défaut si aucun hash
   }
 };
-
-// Vérifier l'ancre à chaque changement de hash
+// Ecoute de l'évènement "hashchange", appel de "updateActiveLink" pour la
+// mise à jour de "activeLink"
 onMounted(() => {
   updateActiveLink();
   window.addEventListener('hashchange', updateActiveLink);
@@ -67,7 +67,6 @@ img {
 h1 {
   color: #ffdb9e;
   font-size: 2.5rem;
-
 }
 
 nav {
