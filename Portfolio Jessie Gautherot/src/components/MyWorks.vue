@@ -1,73 +1,77 @@
 <template>
   <div class="works-list">
-    <h1>Mes réalisations</h1>
-    
     <!-- Projet 1 (CV) -->
+    <!-- Au clic, la fonction openModal est appelée avec l'argument CV et affiche les informations de ce projet-->
     <div class="work-item" @click="openModal('cv')">
       <h2>Mon CV en HTML et CSS</h2>
       <figure>
         <img src="@/assets/image cv 2.png" alt="Mon CV réalisé en HTML et CSS" class="img">
       </figure>
     </div>
-
-    <!-- Projet 2 (Cahier des Charges) -->
+    <!-- Projet 2 (Cahier des charges) -->
+    <!-- Au clic, la fonction openModal est appelée avec l'argument cahier et affiche les informations de ce projet-->
     <div class="work-item" @click="openModal('cahier')">
       <h2>Mon cahier des charges</h2>
       <figure>
         <img src="@/assets/picture-cahier-des-charges.png" alt="Cahier des charges pour un projet web" class="img">
       </figure>
     </div>
-
-    <!-- Projet 3 (Espace Commentaire) -->
+    <!-- Projet 3 (Espace commentaire) -->
+    <!-- Au clic, la fonction openModal est appelée avec l'argument commentaire et affiche les informations de ce projet -->
     <div class="work-item" @click="openModal('commentaire')">
       <h2>Dynamisme d'un espace commentaire en Javascript</h2>
       <figure>
         <img src="@/assets/picture-javascript.png" alt="Espace commentaire dynamique en Javascript" class="img">
       </figure>
     </div>
-
-    <!-- La modale -->
-    <div v-if="isModalOpen" class="modal-overlay" @click.self="closeModal">
-      <div class="modal">
-        <button class="close-modal" @click="closeModal">X</button>
+    <!-- Modal -->
+    <!--Le composant "ModalComponent" est affiché ou non en fonction de la valeur de "isModalOpen"-->
+    <!--Ecoute de l'évenement "modal-close" émit par le composant "ModalComponent" pour fermer la modale-->
+    <ModalComponent :isOpen="isModalOpen" @modal-close="closeModal">
+      <!--Affiche le titre dynamique du projet ouvert-->
+      <template #header>
         <h2>{{ modalTitle }}</h2>
+      </template>
+      <!--Affiche le contenu dynamique du projet ouvert-->
+      <template #content>
         <p><strong>Date de création :</strong> {{ modalDate }}</p>
         <p><strong>Technologies utilisées :</strong> {{ modalTechnologies }}</p>
-
-    <!--div à afficher, seulement si une valeur est assignée-->
+        <!--Affiche le contenu dynamique du projet ouvert, seulement si une valeur est assignée-->
         <div v-if="modalLink">
           <p><a :href="modalLink" target="_blank">Visiter le projet</a></p>
         </div>
-
         <div v-if="modalGithub">
           <p><a :href="modalGithub" target="_blank">Voir le repository GitHub</a></p>
         </div>
-        
         <div v-if="modalImage">
           <img :src="modalImage" alt="Image du projet" class="modal-img">
         </div>
-      </div>
-    </div>
+      </template>
+      <template #footer>
+        <!--bouton de fermeture dans le composant "ModalComponent"-->
+      </template>
+    </ModalComponent>
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue';
+import ModalComponent from './ModalComponent.vue';
 
-// Données de la modale
+// Constantes de la modale
 const isModalOpen = ref(false);
 const modalTitle = ref('');
 const modalDate = ref('');
 const modalTechnologies = ref('');
 const modalLink = ref('');
 const modalGithub = ref('');
-const modalImage = ref(''); 
+const modalImage = ref('');
 
-// Fonction pour ouvrir la modale avec les informations dynamiques
+// Ouvrir la modale avec les informations dynamiques
 const openModal = (project) => {
   isModalOpen.value = true;
 
-// Définir les informations qui apparaissent en fonction du projet
+// Informations en fonction du projet ouvert
   if (project === 'cv') {
     modalTitle.value = 'Mon CV en HTML et CSS';
     modalDate.value = 'Septembre 2024';
@@ -81,8 +85,8 @@ const openModal = (project) => {
     modalDate.value = 'Novembre 2024';
     modalTechnologies.value = 'OpenOffice, PDF';
     modalLink.value = '/cahier-des-charges.pdf'; 
-    modalGithub.value=''; // pas de repository pour ce projet
-    modalImage.value = ''; // Pas d'image pour ce projet
+    modalGithub.value = '';
+    modalImage.value = ''; 
 
   } else if (project === 'commentaire') {
     modalTitle.value = 'Dynamisme d\'un espace commentaire en Javascript';
@@ -101,10 +105,9 @@ const closeModal = () => {
 </script>
 
 <style scoped>
-
-h1 {
-  font-size: xx-large;
-  color: #156062;
+h2 {
+  color: #35434b;
+  font-size: 1.3rem;
 }
 
 .works-list {
@@ -119,7 +122,7 @@ h1 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-bottom: 50px;
+  padding-bottom: 20px;
   cursor: pointer;
 }
 
@@ -130,53 +133,16 @@ h1 {
 }
 
 .img:hover {
-  box-shadow: 10px 5px 5px black;
+  box-shadow: 10px 5px 5px #35434b;
 }
-
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-
-.modal {
-  background-color: white;
-  padding: 20px;
-  border-radius: 8px;
-  max-width: 600px;
-  width: 80%;
-  text-align: center;
-  position: relative;
-  max-height: 80vh;
-  overflow-y: auto;
-}
-
-.close-modal {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 24px;
-  background: none;
-  border: none;
-  color: #156062;
-  cursor: pointer;
-}
-
 
 .modal-img {
-  max-width: 100%;
-  max-height: 300px;
+  max-width: 70%;
+  max-height: 40vh;
 }
 
 a {
-  color: #156062;
+  color: #35434b;
   text-decoration: none;
 }
 
@@ -184,5 +150,3 @@ a:hover {
   text-decoration: underline;
 }
 </style>
-
-
